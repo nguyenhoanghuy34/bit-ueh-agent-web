@@ -1,5 +1,0 @@
-chainlit
-python-dotenv
-pillow
-pymupdf
-python-pptx
