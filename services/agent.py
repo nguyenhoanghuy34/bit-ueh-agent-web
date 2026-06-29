@@ -13,7 +13,18 @@ def chat_response(
 
 
     history.append(
-        (message, answer)
+        {
+            "role": "user",
+            "content": message
+        }
+    )
+
+
+    history.append(
+        {
+            "role": "assistant",
+            "content": answer
+        }
     )
 
 

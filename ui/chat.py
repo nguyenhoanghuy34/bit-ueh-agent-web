@@ -23,8 +23,9 @@ def build_chat_ui():
 
         chatbot = gr.Chatbot(
             height=600,
-            bubble_full_width=False
-        )
+            bubble_full_width=False,
+            type="messages"
+)
 
 
         textbox = gr.Textbox(

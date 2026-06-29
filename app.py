@@ -13,30 +13,23 @@ def create_app():
     ) as app:
 
 
-        login_page = build_login_ui()
+        login = build_login_ui()
 
-        chat_page = build_chat_ui()
-
-
-        # mặc định ẩn chat
-        chat_page.visible = False
+        chat = build_chat_ui()
 
 
-        login_btn = login_page["button"]
-
-
-        login_btn.click(
+        login["button"].click(
             fn=lambda mssv, khoa: (
                 gr.update(visible=False),
                 gr.update(visible=True)
             ),
             inputs=[
-                login_page["mssv"],
-                login_page["khoa"]
+                login["mssv"],
+                login["khoa"]
             ],
             outputs=[
-                login_page["container"],
-                chat_page["container"]
+                login["container"],
+                chat["container"]
             ]
         )
 
@@ -50,6 +43,6 @@ if __name__ == "__main__":
     app = create_app()
 
     app.launch(
-        server_name="0.0.0.0",
+        server_name="127.0.0.1",
         server_port=7860
     )
